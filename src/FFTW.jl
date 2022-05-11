@@ -32,8 +32,9 @@ function __init__()
         fftw_init_threads()
     end
     @static if fftw_provider == "mkl"
-        libfftw3[] = MKL_jll.libmkl_rt_path
-        libfftw3f[] = MKL_jll.libmkl_rt_path
+        error("MKL is not available!")
+        # libfftw3[] = MKL_jll.libmkl_rt_path
+        # libfftw3f[] = MKL_jll.libmkl_rt_path
     end
 end
 
